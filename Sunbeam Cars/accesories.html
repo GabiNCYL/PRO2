@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose accessories</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300&family=Lemonada&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <table id="titletable">
+            <tr>
+                <td>
+                    <h1 id="Logo">SunBeamCars Inc.</h1>
+                </td>
+                <td>
+                    <input id="login" type="button" value="Log in">
+                </td>
+            </tr>
+        </table>
+    </header>
+    <div>
+        <form class="accessorieform" id="form">
+            <fieldset class="fieldset2">
+                <h2 class="hello">Choose accessories</h2>
+                <br>
+                <input type="checkbox" data-item="Car seat cushion" class="slist" value="300" onchange="calculateTotal(this, this.value)">Car seat cushion, 300DKK<br>
+                <br>
+                <input type="checkbox" data-item="Charger" class="slist" value="200" onchange="calculateTotal(this, this.value)">Charger, 200DKK<br>
+                <br>
+                <input type="checkbox" data-item="Dash Cam" class="slist" value="500" onchange="calculateTotal(this, this.value)">Dash Cam, 500DKK<br>
+                <br>
+                <input type="checkbox" data-item="GPS" class="slist" value="700" onchange="calculateTotal(this, this.value)">GPS, 700DKK<br>
+                <br>
+                <input type="checkbox" data-item="Bluetooth adapter" class="slist" value="800" onchange="calculateTotal(this, this.value)">Bluetooth adapte, 800DKK<br>
+                <br>
+                <div  style="color:rgb(245, 175, 239);" id="totaloutput"></div>
+                <br>
+                <button type="submit">Choose</button>
+            </fieldset>
+        </form>
+    </div>
+    <script>
+        let total = 0.00; // Global variable, total starts at zero
+        showTotal(); // Calls function showTotal to show current total
+
+        // Event handler - check if checkbox is selected or not and 
+        // adjust the total value accordingly
+        function calculateTotal(checkbox, itemprice) {
+            if (checkbox.checked === true) { // If the checkbox is seleted then ...
+                total = Math.abs(total + parseFloat(itemprice));
+            } else { // if it is not selected then ...
+                total = Math.abs(total - parseFloat(itemprice));
+            }
+            showTotal();
+        }
+        // Shows total value on screen
+        function showTotal() {
+            const output = document.getElementById("totaloutput");
+            output.innerText = `Total ${total.toLocaleString("da-DK", {style: "currency", currency: "DKK"})}`;
+        }
+        console.warn(sessionStorage.getItem("car"));
+        const form = document.getElementById("form");
+        form.reset(); // Resets form every time page loads
+        
+        const checkboxes = document.getElementsByClassName("slist"); //Build an object list with checkboxes
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+            let shoppinglist = []; // Define shopping list
+            for (const checkbox of checkboxes) {
+                if (checkbox.checked === true) { // If the item is selected ...
+                    shoppinglist.push(checkbox.dataset.item + "(dkr. " + checkbox.value + ")"); // add it to the shopping list.
+                }
+            }
+            // Stores information in sessionstorage
+            sessionStorage.setItem("goods", JSON.stringify(shoppinglist));
+            sessionStorage.setItem("total", total.toLocaleString("da-DK", {style: "currency",currency: "DKK"}));
+            location.href="allpay.html"; // Redirect user to page2.html
+        })
+    </script>
+    
+</body>
+<script src="main.js" defer></script>
+</html>

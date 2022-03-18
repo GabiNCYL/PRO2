@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#Logo{
+    font-family: 'Lemonada', cursive;
+    color: rgb(236, 85, 85);
+    font-size: 50px;
+    padding-left: 10%;
+}
+.form{
+    width:fit-content;
+    background-color: rgb(26, 163, 26);
+    margin-left: 5%;
+}
+h2{
+    font-family: 'Lemonada', cursive;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+td{
+    font-family: 'Fredoka', sans-serif;
+    font-size: 18px;
+}
+#titletable {
+    width: 90%;
+    height: 50px;
+}
+#titletable input{
+    font-family: 'Fredoka', sans-serif;
+    background-color: rgb(236, 85, 85);
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+#titletable :nth-child(2){
+    text-align: center;
+}
+#login{
+    margin-left: 70%;
+    margin:0;
+}
+.car{
+    display: flex;
+    width: 700px;
+    height: 100px;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.fieldset td{
+    padding-left: 10px;
+    margin-left: 10px;
+}
+button{
+    font-family: 'Fredoka', sans-serif;
+    background-color: rgb(236, 85, 85);
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+/*accesorie page*/
+.hello{
+    justify-content: center;
+    display: flex;
+    font-family: 'Lemonada', cursive;
+}
+.fieldset2{
+    width: 300px;
+    background-color: rgb(26, 163, 26);
+    margin-left: 39%;
+    padding: 10px;
+}
+.accessorieform{
+    padding: 20px;
+    margin: 10px;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 15px;
+}
+#totaloutput{
+    font-family: 'Lemonada', cursive;
+    font-size: 20px;
+}
+input{
+    margin: 10px;
+}
+.fieldset2 button{
+margin-bottom: 20px;
+margin-left: 20px;
+}

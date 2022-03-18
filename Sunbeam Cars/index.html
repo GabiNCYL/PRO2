@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent a car | Sunbeamcars</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300&family=Lemonada&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+    <header>
+        <table id="titletable">
+            <tr>
+                <td>
+                    <h1 id="Logo">SunBeamCars Inc.</h1>
+                </td>
+                <td>
+                    <input id="login" type="button" value="Log in">
+                </td>
+            </tr>
+        </table>
+    </header>
+    <section>
+    <p style="background-image: url('images/background.jpg');"></p>
+        <form id="form" class="form">
+            <fieldset id="fieldset">
+                <h2>Find the car that suits you!</h2>
+                <table>
+                    <tr>
+                        <td>
+                            <label for="pickup">I pick it up</label>
+                        </td>
+                        <td> <label for="handin">I hand it in</label></td>
+                    </tr>
+                    <tr>
+                        <td>   <input id="pickupdate" type="date"></td>
+                        <td>  <input id="handindate" type="date"></td>
+                    </tr>
+            
+                <tr>
+                    <td> <label for="personnumber">Number of persons</label></td>
+                    <td>   <label for="suitcasenumber">Number of suitcases</label></td>
+                </tr>
+                <tr>
+                    <td><input id="personnumber" type="number" min="1" max="7"></td>
+                    <td><select id="suitcases">
+                        <option value="0">0 - only handbag</option>
+                        <option value="1">1 suitcase</option>
+                        <option value="2">2 suitcases</option>
+                        <option value="3">3 suitcases</option>
+                        <option value="4">4 suitcases</option>
+                    </td>
+                </tr>
+                </table>
+                <br><br>
+                <!--<button type="submit" onclick="personCheck()">Search</button>-->
+                <button type="submit">Choose</button>
+        </fieldset>
+        </form>
+    </section>
+<!--  just an experiment
+    <button onclick="lol()">SHOW CAR</button>-->
+    <div id="output"></div>
+    <div id="error"></div>
+
+</body>
+<script src="main.js" defer></script>
+</html>
